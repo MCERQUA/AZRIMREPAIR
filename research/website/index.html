@@ -429,18 +429,82 @@
             line-height: 1.6;
         }
 
-        .research-link {
+        /* IMPROVED RESEARCH BUTTONS */
+        .research-button {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
+            gap: 0.75rem;
+            background: var(--gradient-primary);
+            color: white;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
             transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
         }
 
-        .research-link:hover {
+        .research-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
             gap: 1rem;
+        }
+
+        .research-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .research-button:hover::before {
+            left: 100%;
+        }
+
+        .button-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .research-button:hover .button-icon {
+            transform: translateX(4px);
+        }
+
+        .button-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .button-primary {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .button-secondary {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* EXECUTIVE SUMMARY BUTTON - Special styling */
+        .executive-button {
+            background: var(--gradient-success);
+            border: 2px solid var(--success);
+            transform: scale(1.05);
+            font-size: 1.1rem;
+        }
+
+        .executive-button:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
         }
 
         .cta-section {
@@ -551,6 +615,11 @@
             .nav-links {
                 display: none;
             }
+
+            .research-button {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
         }
 
         [data-animate] {
@@ -593,7 +662,7 @@
             
             <div class="hero-stats">
                 <div class="stat-card">
-                    <span class="stat-number">6</span>
+                    <span class="stat-number">7</span>
                     <span class="stat-label">Comprehensive Reports</span>
                 </div>
                 <div class="stat-card">
@@ -757,74 +826,120 @@
                 <span class="section-badge">Complete Research</span>
                 <h2 class="section-title">Detailed Analysis Reports</h2>
                 <p class="section-description">
-                    Access comprehensive research documentation covering all aspects of digital presence and competitive positioning.
+                    Click any button below to access comprehensive research documentation covering all aspects of digital presence and competitive positioning.
                 </p>
             </div>
 
             <div class="research-grid">
+                <!-- EXECUTIVE SUMMARY - Featured First -->
+                <div class="research-card" data-animate>
+                    <div class="research-icon">📋</div>
+                    <h3 class="research-title">📋 Executive Summary</h3>
+                    <p class="research-description">
+                        <strong>Complete overview and strategic recommendations</strong> - ROI projections, implementation timeline, critical action items and priorities for immediate implementation.
+                    </p>
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/executive-summary.md" class="research-button executive-button" target="_blank">
+                        <div class="button-text">
+                            <span class="button-primary">View Executive Summary</span>
+                            <span class="button-secondary">Complete strategic overview</span>
+                        </div>
+                        <span class="button-icon">📊</span>
+                    </a>
+                </div>
+
+                <!-- SEO ANALYSIS -->
                 <div class="research-card" data-animate>
                     <div class="research-icon">🔍</div>
-                    <h3 class="research-title">SEO Analysis Report</h3>
+                    <h3 class="research-title">🔍 SEO Analysis Report</h3>
                     <p class="research-description">
-                        Technical SEO audit, keyword analysis, content gaps, and optimization recommendations for improved search visibility.
+                        <strong>Technical SEO audit with HTML code analysis</strong> - Keyword analysis, content gaps, meta tags assessment, and optimization recommendations for improved search visibility.
                     </p>
-                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/seo-analysis-report.md" class="research-link" target="_blank">
-                        View Full Analysis →
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/seo-analysis-report.md" class="research-button" target="_blank">
+                        <div class="button-text">
+                            <span class="button-primary">View SEO Analysis</span>
+                            <span class="button-secondary">Technical optimization guide</span>
+                        </div>
+                        <span class="button-icon">🔍</span>
                     </a>
                 </div>
 
+                <!-- COMPETITIVE ANALYSIS -->
                 <div class="research-card" data-animate>
                     <div class="research-icon">🏁</div>
-                    <h3 class="research-title">Competitive Analysis</h3>
+                    <h3 class="research-title">🏁 Competitive Analysis</h3>
                     <p class="research-description">
-                        In-depth analysis of 15+ local competitors, market positioning, pricing strategies, and competitive advantages.
+                        <strong>In-depth analysis of 25+ local competitors</strong> - Market positioning, pricing strategies, competitive advantages, and strategic opportunities identified.
                     </p>
-                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/local-competition-analysis.md" class="research-link" target="_blank">
-                        View Competition Report →
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/local-competition-analysis.md" class="research-button" target="_blank">
+                        <div class="button-text">
+                            <span class="button-primary">View Competition Report</span>
+                            <span class="button-secondary">25+ competitors analyzed</span>
+                        </div>
+                        <span class="button-icon">🏁</span>
                     </a>
                 </div>
 
+                <!-- BRAND PRESENCE REVIEW -->
                 <div class="research-card" data-animate>
                     <div class="research-icon">🎨</div>
-                    <h3 class="research-title">Brand Presence Review</h3>
+                    <h3 class="research-title">🎨 Brand Presence Review</h3>
                     <p class="research-description">
-                        Comprehensive brand analysis, social media audit, reputation assessment, and online presence evaluation.
+                        <strong>Comprehensive brand and social media audit</strong> - Online presence evaluation, reputation assessment, and brand development strategy recommendations.
                     </p>
-                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/online-brand-review.md" class="research-link" target="_blank">
-                        View Brand Analysis →
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/online-brand-review.md" class="research-button" target="_blank">
+                        <div class="button-text">
+                            <span class="button-primary">View Brand Analysis</span>
+                            <span class="button-secondary">Complete social media audit</span>
+                        </div>
+                        <span class="button-icon">🎨</span>
                     </a>
                 </div>
 
+                <!-- GOOGLE BUSINESS PROFILE -->
                 <div class="research-card" data-animate>
                     <div class="research-icon">📍</div>
-                    <h3 class="research-title">Google Business Profile</h3>
+                    <h3 class="research-title">📍 Google Business Profile</h3>
                     <p class="research-description">
-                        Local search optimization analysis, Google Business Profile setup strategy, and local SEO recommendations.
+                        <strong>Local search optimization analysis</strong> - Google Business Profile setup strategy, local SEO recommendations, and competitive positioning guide.
                     </p>
-                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/google-business-profile-report.md" class="research-link" target="_blank">
-                        View Local SEO Report →
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/google-business-profile-report.md" class="research-button" target="_blank">
+                        <div class="button-text">
+                            <span class="button-primary">View Local SEO Report</span>
+                            <span class="button-secondary">Google optimization guide</span>
+                        </div>
+                        <span class="button-icon">📍</span>
                     </a>
                 </div>
 
+                <!-- BACKLINKS & CITATIONS -->
                 <div class="research-card" data-animate>
                     <div class="research-icon">🔗</div>
-                    <h3 class="research-title">Backlinks & Citations</h3>
+                    <h3 class="research-title">🔗 Backlinks & Citations</h3>
                     <p class="research-description">
-                        Link profile analysis, citation building opportunities, directory submissions, and authority building strategy.
+                        <strong>Link profile and citation building strategy</strong> - Directory submission opportunities, authority building plan, and local citation network development.
                     </p>
-                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/backlinks-citations-report.md" class="research-link" target="_blank">
-                        View Citation Analysis →
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/backlinks-citations-report.md" class="research-button" target="_blank">
+                        <div class="button-text">
+                            <span class="button-primary">View Citation Analysis</span>
+                            <span class="button-secondary">Authority building strategy</span>
+                        </div>
+                        <span class="button-icon">🔗</span>
                     </a>
                 </div>
 
+                <!-- CONTENT STRATEGY -->
                 <div class="research-card" data-animate>
                     <div class="research-icon">📝</div>
-                    <h3 class="research-title">Content Strategy</h3>
+                    <h3 class="research-title">📝 Content Strategy</h3>
                     <p class="research-description">
-                        Blog content analysis, content marketing opportunities, educational content strategy, and content calendar.
+                        <strong>Blog content and marketing opportunities</strong> - Educational content strategy, content calendar development, and thought leadership positioning.
                     </p>
-                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/blog-content-analysis.md" class="research-link" target="_blank">
-                        View Content Strategy →
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/blog-content-analysis.md" class="research-button" target="_blank">
+                        <div class="button-text">
+                            <span class="button-primary">View Content Strategy</span>
+                            <span class="button-secondary">Complete marketing plan</span>
+                        </div>
+                        <span class="button-icon">📝</span>
                     </a>
                 </div>
             </div>
