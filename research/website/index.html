@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZ Rim Repair - Digital Presence Analysis | Echo AI Systems</title>
+    <meta name="description" content="Comprehensive digital marketing analysis for AZ Rim Repair, Phoenix's premier wheel repair service. Professional research by Echo AI Systems.">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7c3aed;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #0f172a;
+            --dark-secondary: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--gray);
+            background: var(--light);
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .animated-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .animated-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .report-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .report-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-dark);
+            position: relative;
+            overflow: hidden;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--secondary);
+            top: 60%;
+            right: 20%;
+            animation-delay: 10s;
+        }
+
+        .shape-3 {
+            width: 250px;
+            height: 250px;
+            background: var(--success);
+            bottom: 20%;
+            left: 30%;
+            animation-delay: 5s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -100px) rotate(90deg); }
+            50% { transform: translate(-100px, 100px) rotate(180deg); }
+            75% { transform: translate(50px, 50px) rotate(270deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--success);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        .main-content {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .digital-footprint {
+            background: var(--gradient-dark);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 24px;
+            margin-bottom: 4rem;
+        }
+
+        .footprint-score {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(var(--danger) 0deg 144deg, var(--gray) 144deg 360deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+
+        .score-inner {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .score-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--danger);
+        }
+
+        .score-total {
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        .score-status {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--danger);
+            margin-bottom: 0.5rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .metric-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .metric-score {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--danger);
+        }
+
+        .metric-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .metric-fill {
+            height: 100%;
+            background: var(--danger);
+            width: 20%;
+            border-radius: 4px;
+        }
+
+        .metric-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-xl);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary);
+        }
+
+        .research-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .research-title {
+            font-family: var(--font-display);
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .research-description {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .research-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .research-link:hover {
+            gap: 1rem;
+        }
+
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4rem 2rem;
+            border-radius: 24px;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            font-weight: 600;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        [data-animate].visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav class="report-nav">
+        <div class="nav-container">
+            <div class="logo">Echo AI Systems</div>
+            <ul class="nav-links">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#analysis">Analysis</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="report-hero">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        
+        <div class="hero-content">
+            <h1 class="hero-title">AZ Rim Repair</h1>
+            <h2 class="hero-subtitle">Digital Presence Analysis</h2>
+            <p class="hero-description">
+                Comprehensive research and analysis of Phoenix's premier wheel repair service. 
+                Professional digital marketing assessment by Echo AI Systems.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Comprehensive Reports</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">Competitors Analyzed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100+</span>
+                    <span class="stat-label">Optimization Opportunities</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <section id="overview" class="section">
+            <div class="digital-footprint" data-animate>
+                <div class="footprint-score">
+                    <div class="score-circle">
+                        <div class="score-inner">
+                            <span class="score-number">4</span>
+                            <span class="score-total">/10</span>
+                        </div>
+                    </div>
+                    <div class="score-status">Critical Improvement Needed</div>
+                    <p>AZ Rim Repair's digital presence requires immediate attention to compete effectively in the Phoenix market.</p>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-name">Website Performance</span>
+                            <span class="metric-score">4/10</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 40%"></div>
+                        </div>
+                        <div class="metric-description">Basic functionality present, needs SEO optimization</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-name">Search Visibility</span>
+                            <span class="metric-score">1/10</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 10%"></div>
+                        </div>
+                        <div class="metric-description">Missing Google Business Profile, no local search presence</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-name">Social Media Presence</span>
+                            <span class="metric-score">1/10</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 10%"></div>
+                        </div>
+                        <div class="metric-description">No social media accounts found across all platforms</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-name">Online Reputation</span>
+                            <span class="metric-score">6/10</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 60%; background: var(--warning)"></div>
+                        </div>
+                        <div class="metric-description">Excellent testimonials, but not leveraged online</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-name">Local SEO</span>
+                            <span class="metric-score">2/10</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 20%"></div>
+                        </div>
+                        <div class="metric-description">Minimal directory presence, citation inconsistencies</div>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <span class="metric-name">Content Strategy</span>
+                            <span class="metric-score">0/10</span>
+                        </div>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 5%"></div>
+                        </div>
+                        <div class="metric-description">No blog, educational content, or content marketing</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="analysis" class="section">
+            <div class="section-header" data-animate>
+                <span class="section-badge">Key Findings</span>
+                <h2 class="section-title">Analysis Summary</h2>
+                <p class="section-description">
+                    Our comprehensive research reveals significant opportunities for digital growth and market positioning.
+                </p>
+            </div>
+
+            <div class="research-grid">
+                <div class="animated-card" data-animate>
+                    <div class="research-icon">🎯</div>
+                    <h3 class="research-title">Service Excellence Foundation</h3>
+                    <p class="research-description">
+                        Exceptional customer testimonials and Brandon's "Wheel Whisperer" reputation provide strong foundation for digital marketing success.
+                    </p>
+                </div>
+
+                <div class="animated-card" data-animate>
+                    <div class="research-icon">⚡</div>
+                    <h3 class="research-title">Competitive Speed Advantage</h3>
+                    <p class="research-description">
+                        Same-day service guarantee and appointment-only model create unique market positioning opportunity versus competitors.
+                    </p>
+                </div>
+
+                <div class="animated-card" data-animate>
+                    <div class="research-icon">🔧</div>
+                    <h3 class="research-title">Custom Fabrication Edge</h3>
+                    <p class="research-description">
+                        Beyond standard rim repair to roll cages and custom work - untapped market potential in specialized automotive fabrication.
+                    </p>
+                </div>
+
+                <div class="animated-card" data-animate>
+                    <div class="research-icon">📱</div>
+                    <h3 class="research-title">Digital Presence Gap</h3>
+                    <p class="research-description">
+                        Complete absence from social media, Google Business Profile, and local directories represents critical competitive vulnerability.
+                    </p>
+                </div>
+
+                <div class="animated-card" data-animate>
+                    <div class="research-icon">🏆</div>
+                    <h3 class="research-title">Market Leadership Potential</h3>
+                    <p class="research-description">
+                        With proper digital strategy, business can dominate "wheel repair Phoenix" searches and capture significant market share.
+                    </p>
+                </div>
+
+                <div class="animated-card" data-animate>
+                    <div class="research-icon">📈</div>
+                    <h3 class="research-title">Growth Opportunity</h3>
+                    <p class="research-description">
+                        Estimated 300-500% increase in local visibility and 200-400% growth in customer inquiries with strategic implementation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="research" class="section">
+            <div class="section-header" data-animate>
+                <span class="section-badge">Complete Research</span>
+                <h2 class="section-title">Detailed Analysis Reports</h2>
+                <p class="section-description">
+                    Access comprehensive research documentation covering all aspects of digital presence and competitive positioning.
+                </p>
+            </div>
+
+            <div class="research-grid">
+                <div class="research-card" data-animate>
+                    <div class="research-icon">🔍</div>
+                    <h3 class="research-title">SEO Analysis Report</h3>
+                    <p class="research-description">
+                        Technical SEO audit, keyword analysis, content gaps, and optimization recommendations for improved search visibility.
+                    </p>
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/seo-analysis-report.md" class="research-link" target="_blank">
+                        View Full Analysis →
+                    </a>
+                </div>
+
+                <div class="research-card" data-animate>
+                    <div class="research-icon">🏁</div>
+                    <h3 class="research-title">Competitive Analysis</h3>
+                    <p class="research-description">
+                        In-depth analysis of 15+ local competitors, market positioning, pricing strategies, and competitive advantages.
+                    </p>
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/local-competition-analysis.md" class="research-link" target="_blank">
+                        View Competition Report →
+                    </a>
+                </div>
+
+                <div class="research-card" data-animate>
+                    <div class="research-icon">🎨</div>
+                    <h3 class="research-title">Brand Presence Review</h3>
+                    <p class="research-description">
+                        Comprehensive brand analysis, social media audit, reputation assessment, and online presence evaluation.
+                    </p>
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/online-brand-review.md" class="research-link" target="_blank">
+                        View Brand Analysis →
+                    </a>
+                </div>
+
+                <div class="research-card" data-animate>
+                    <div class="research-icon">📍</div>
+                    <h3 class="research-title">Google Business Profile</h3>
+                    <p class="research-description">
+                        Local search optimization analysis, Google Business Profile setup strategy, and local SEO recommendations.
+                    </p>
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/google-business-profile-report.md" class="research-link" target="_blank">
+                        View Local SEO Report →
+                    </a>
+                </div>
+
+                <div class="research-card" data-animate>
+                    <div class="research-icon">🔗</div>
+                    <h3 class="research-title">Backlinks & Citations</h3>
+                    <p class="research-description">
+                        Link profile analysis, citation building opportunities, directory submissions, and authority building strategy.
+                    </p>
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/backlinks-citations-report.md" class="research-link" target="_blank">
+                        View Citation Analysis →
+                    </a>
+                </div>
+
+                <div class="research-card" data-animate>
+                    <div class="research-icon">📝</div>
+                    <h3 class="research-title">Content Strategy</h3>
+                    <p class="research-description">
+                        Blog content analysis, content marketing opportunities, educational content strategy, and content calendar.
+                    </p>
+                    <a href="https://github.com/MCERQUA/AZRIMREPAIR/blob/main/research/blog-content-analysis.md" class="research-link" target="_blank">
+                        View Content Strategy →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="cta-section" data-animate>
+            <h2 class="cta-title">Ready to Transform Your Digital Presence?</h2>
+            <p class="cta-description">
+                Based on this comprehensive analysis, we've identified specific opportunities to strengthen your digital presence and attract more customers online. Let's discuss how these insights can help grow your business.
+            </p>
+            
+            <div class="contact-info">
+                <div class="contact-item">echoaisystem.com</div>
+                <div class="contact-item">echoaisystems@gmail.com</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">Echo AI Systems</div>
+            <p class="footer-text">Professional Digital Marketing Research & Strategy</p>
+            <div class="footer-links">
+                <a href="https://echoaisystem.com">Website</a>
+                <a href="mailto:echoaisystems@gmail.com">Email</a>
+                <a href="https://github.com/MCERQUA/AZRIMREPAIR">GitHub Repository</a>
+            </div>
+            <p class="footer-text">© 2025 Echo AI Systems. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-animate]').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.report-nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
+</html>
